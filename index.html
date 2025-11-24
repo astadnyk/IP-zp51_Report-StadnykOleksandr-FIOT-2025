@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Звіти з веб-дизайну | Стадник Олександр</title>
+    <style>
+        body { font-family: sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+        h1, h2, h3 { color: #333; }
+        .lab-report { border: 1px solid #ccc; padding: 20px; margin-bottom: 40px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .code-block { background-color: #f4f4f4; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace; }
+        .screenshot { max-width: 100%; border: 1px solid #ddd; margin: 10px 0; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Звіти з дисципліни "Проектування WEB-застосувань"</h1>
+        <p><strong>Студент:</strong> Стадник Олександр, Група ІП-зп51</p>
+        <nav>
+            <a href="#lab1">Лабораторна №1</a> | 
+            <a href="#">Лабораторна №2 (Скоро)</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="lab1" class="lab-report">
+            <h2>Лабораторна робота №1</h2>
+            
+            <h3>1. Опис предметного середовища</h3>
+            <p><strong>Тема:</strong> Енциклопедія хвостатих друзів.</p>
+            <p><strong>Мета:</strong> Створення зручного ресурсу для популяризації знань про домашніх тварин (собак та котів).</p>
+            <p><strong>Бізнес-логіка:</strong> Сайт надає інформацію про породи. Користувач обирає категорію (Собаки/Коти), бачить список порід і може переглянути деталі. Реалізовано пошук та порівняльну таблицю.</p>
+
+            <h3>2. Вимоги до застосунку</h3>
+            <ul>
+                <li><strong>Функціональні:</strong> Навігація, пошук, перегляд карток тварин, таблиця порівняння.</li>
+                <li><strong>Нефункціональні:</strong> Адаптивність, швидке завантаження, відсутність реєстрації.</li>
+            </ul>
+
+            <hr>
+
+            <h3>3. Реалізація (Коди та Скріншоти)</h3>
+            
+            <h4>HTML-код Таблиці</h4>
+            <div class="code-block">
+                <xmp>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Характеристика</th>
+            <th>Собаки 🐶</th>
+            <th>Коти 🐱</th>
+        </tr>
+    </thead>                  
+    <tbody>
+        <tr>
+            <td>Прогулянки</td>
+            <td>Потрібні щодня</td>
+            <td>Не обов'язкові</td>
+        </tr>
+        <tr>
+            <td>Соціалізація</td>
+            <td>Люблять компанію</td>
+            <td>Більш незалежні</td>
+        </tr>
+        <tr>
+            <td>Дресирування</td>
+            <td>Зазвичай легше</td>
+            <td>Потребує терпіння</td>
+        </tr>
+    </tbody>         
+</table>
+                </xmp>
+            
+            </div>
+            <p><em>Результат виконання:</em></p>
+            <img src="screenshots/table_1.png" alt="Скріншот таблиці" class="screenshot">
+
+            <h4>HTML-код Зображення</h4>
+            <div class="code-block">
+                <xmp>
+<img src="img/sobaka-i-kit.png" alt="Милі котик і песик разом" width="600">
+                </xmp>
+            </div>
+            <img src="screenshots/image_1.png" alt="Скріншот зображення" class="screenshot">
+
+            <h4>HTML-код Форми (Пошук)</h4>
+            <div class="code-block">
+                <xmp>
+<section id="search-section">
+    <h3>Знайди свою улюблену породу</h3>
+    <form>
+        <label for="search">Пошук:</label>
+        <input type="text" id="search" name="search" placeholder="Введіть назву породи...">
+        <button type="button">Знайти</button>
+    </form>
+</section>
+                </xmp>
+            </div>
+            <img src="screenshots/search_1.png" alt="Скріншот форми" class="screenshot">
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Стадник Олександр</p>
+    </footer>
+
+</body>
+</html>
