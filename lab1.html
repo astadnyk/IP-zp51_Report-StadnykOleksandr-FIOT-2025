@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<!-- Голова документа -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Звітний документ</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<!-- Скрипт для динамічного завантаження контенту -->
+<script>
+    async function loadPage(page) {
+        try {
+            // Завантажуємо вміст сторінки
+            let response = await fetch("lab1/" + page);
+            // Перевіряємо чи запит успішний
+            if (!response.ok) {
+                throw new Error("HTTP error " + response.status);
+            }
+            // Отримуємо текст сторінки
+            let text = await response.text();
+            // Виводимо текст у відповідний контейнер
+            document.getElementById("output").innerHTML = text;
+            // Якщо завантажується головна сторінка проєкту, встановлюємо src для iframe
+            const iframe = document.querySelector('#output iframe');
+            if (iframe) {
+                // Встановлюємо шлях до головної сторінки проекту
+                iframe.src = 'lab1/project/index.html';
+            }
+        } catch (err) {
+            // Виводимо повідомлення про помилку
+            document.getElementById("output").innerHTML = "<p>Помилка завантаження сторінки!</p>";
+            // Логування помилки в консоль
+            console.error(err);
+        }
+    }
+</script>
+
+<!-- Тіло документа -->
+<body>
+
+<!-- Початок обгортки сторінки -->
+<div class="page-wrapper">
+
+    <!-- Верхня панель з назвою -->
+    <header>
+        <div class="top-bar">
+            <div class="header-container">
+                <h1 class="text">
+                    ЗВІТИ З ЛАБОРАТОРНИХ РОБІТ З ДИСЦИПЛІНИ "Проектування WEB-застосувань"
+                </h1>
+            </div>
+        </div> <!-- кінець верхньої панелі -->
+
+        <!-- Середня панель із даними -->
+        <div class="middle-bar">
+            <div class="header-container middle-row">
+                <div class="author-text">
+                    Виконавець: Студент групи ІП-зп51 Стадник Олександр Леонідович
+                </div>
+                <div class="author-photo">
+                    <img src="img/photo.jpg" alt="photo">
+                </div>
+            </div>
+        </div> <!-- кінець середньої панелі -->
+
+        <!-- Нижнє меню навігації між лабораторними -->
+        <div class="bottom-bar">
+            <div class="header-container">
+                <nav class="menu">
+                    <a href="index.html">Головна</a>
+                    <a href="lab1.html">Лабораторна 1</a>
+                </nav>
+            </div>
+        </div> <!-- кінець нижнього меню навігації -->
+    </header> <!-- кінець верхньої панелі -->
+
+    <!-- Основний контейнер сторінки -->
+    <div class="main-container">
+        <div class="content-section">
+            
+            <!-- Ліва панель із внутрішнім меню лабораторної -->
+            <div class="left-side">
+                <aside>
+                    
+                    <!-- Навігаційне меню лабораторної роботи -->
+                    <nav class="left-nav">
+                        <ul>
+                            <li><a href="javascript:void(0)" onclick="loadPage('tema.html')">Тема. Мета. Місце розташування сайту.</a></li>
+                            <li><a href="javascript:void(0)" onclick="loadPage('description.html')">
+                                Опис застосунку, предметного середовища. Опис бізнес логіки.
+                            </a></li>
+                            
+                            <!-- Підменю зі структурою документа -->
+                            <li>
+                                <h3>Структура документа</h3>
+                                <ul class="sub-menu">
+                                    <li><a href="javascript:void(0)" onclick="loadPage('table.html')">Приклад HTML-коду таблиці</a></li>
+                                    <li><a href="javascript:void(0)" onclick="loadPage('image.html')">Приклад HTML-коду зображення</a></li>
+                                    <li><a href="javascript:void(0)" onclick="loadPage('search.html')">Приклад HTML-коду пошуку</a></li>
+                                    <li><a href="javascript:void(0)" onclick="loadPage('list.html')">Приклад HTML-коду списків</a></li>
+                                </ul>
+                            </li>
+                            
+                            <!-- Пункти меню для завантаження інших сторінок лабораторної роботи -->
+                            <li><a href="javascript:void(0)" onclick="loadPage('mainpage.html')">Головна сторінка</a></li>
+                            <li><a href="javascript:void(0)" onclick="loadPage('maincode.html')">Код головної сторінки</a></li>
+                            <li><a href="javascript:void(0)" onclick="loadPage('conclusions.html')">Висновки</a></li>
+                            <li><a href="javascript:void(0)" onclick="loadPage('questions.html')">Контрольні питання</a></li>
+                        </ul>
+                    </nav> <!-- кінець навігаційного меню лабораторної роботи -->
+                </aside>
+            </div> <!-- завершення лівої панелі -->
+            
+            <!-- Права панель для виведення контенту -->
+            <div class="right-side">
+                <div class="info-card" id="output">
+                    <h2>Вивід інформації тут</h2>
+                    <p>Оберіть пункт меню.</p>
+                </div>
+            </div> <!-- завершення правої панелі -->
+        </div> <!-- завершення секції контенту -->
+    </div> <!-- завершення основного контейнера сторінки -->
+
+    <!-- Нижній колонтитул сайту -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Стадник О.Л. – Звіти з лабораторних робіт з дисципліни "Проектування WEB-застосувань"</p>
+            <p>Контакти: <a href="mailto:stadnyk.o.l.-zpi51@edu.kpi.ua">stadnyk.o.l.-zpi51@edu.kpi.ua</a></p>
+        </div>
+    </footer> <!-- кінець нижнього колонтитулу сторінки -->
+
+</div> <!-- кінець обгортки сторінки -->
+
+<!-- Підключення зовнішнього скрипту -->
+<script src="js/script_index.js" defer></script>
+
+</body> <!-- кінець тіла документа -->
+
+</html> <!-- кінець HTML-документа -->
