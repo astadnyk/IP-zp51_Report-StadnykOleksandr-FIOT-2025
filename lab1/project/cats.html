@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uk">
+<!-- HEAD Частина з метаданими сторінки -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Коти | Енциклопедія хвостатих</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<!-- BODY Основний вміст сторінки -->
+<body>
+    <!-- HEADER Верхня частина сайту -->
+    <header class="site-header">
+        <div class="header-brand">
+            <h1>🐾 Енциклопедія хвостатих друзів</h1>
+            <p>Твій путівник у світ домашніх улюбленців</p>
+        </div>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="dogs.html">Собаки</a></li>
+                <li><a href="cats.html" class="active">Коти</a></li>
+            </ul>
+        </nav>
+    </header> <!-- Кінець header -->
+    <!-- Головний вміст сторінки -->
+    <main>
+        <section id="search-section">
+            <h3>Знайди свою улюблену породу</h3>
+            <form>
+                <label for="search">Пошук:</label>
+                <input type="text" id="search" onkeyup="searchAnimals()" placeholder="Введіть назву породи ..." class="input-style">
+                <button type="button" class="btn-style">Знайти</button>
+            </form>
+        </section>
+        <!-- Секція з картками котів -->
+        <section>
+            <div class="animal-grid">
+                <div class="animal-card">
+                    <img src="img/Mein-kun.jpg" alt="Мейн-кун">
+                    <h3>Мейн-кун</h3>
+                    <p>Гігант серед котів. Лагідний та пухнастий.</p>
+                </div>
+                <div class="animal-card">
+                    <img src="img/British.jpg" alt="Британець">
+                    <h3>Британська короткошерста</h3>
+                    <p>Аристократ з плюшевою шубкою.</p>
+                </div>
+                <div class="animal-card">
+                    <img src="img/Sphynx.jpg" alt="Сфінкс">
+                    <h3>Сфінкс</h3>
+                    <p>Екзотичний безшерстий кіт.</p>
+                </div>
+            </div>
+        </section> <!-- Кінець секції з картками котів -->
+    </main> <!-- Кінець головного вмісту сторінки -->
+    <hr> <!-- Горизонтальна лінія -->
+    <!-- FOOTER Нижня частина сайту -->
+    <footer>
+        <p>&copy; 2025 Енциклопедія хвостатих друзів. Усі права захищені.</p>
+    </footer> <!-- Кінець footer -->
+    <!-- Скрипт для пошуку порід котів -->
+    <script>
+        function searchAnimals() {
+            let input = document.getElementById('search').value.toLowerCase();
+            let cards = document.getElementsByClassName('animal-card');
+            for (let i = 0; i < cards.length; i++) {
+                let title = cards[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+                title.includes(input) ? cards[i].style.display = "" : cards[i].style.display = "none";
+            }
+        }
+    </script> <!-- Кінець скрипта -->
+</body> <!-- Кінець документа -->
+</html>

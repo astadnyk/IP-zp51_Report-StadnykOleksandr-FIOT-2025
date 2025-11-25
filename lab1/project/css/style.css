@@ -1,0 +1,177 @@
+/* Загальні налаштування для всього тіла сторінки */
+body {
+    background-color: #fff5e6; /* Світлий бежевий фон (приємний для очей) */
+    font-family: 'Verdana', sans-serif; /* Читабельний шрифт */
+    color: #4a4a4a; /* Темно-сірий текст замість чорного */
+    line-height: 1.6; /* Міжрядковий інтервал */
+    margin: 0;
+    padding: 0;
+}
+
+/* Заголовки */
+h1, h2, h3 {
+    color: #d35400; /* Помаранчевий (колір лисиці/собаки) */
+    text-align: center;
+}
+
+/* Зображення */
+img {
+    max-width: 100%; /* Щоб картинки не вилазили за екран */
+    border-radius: 10px; /* Закруглені кути */
+    display: block;
+    margin: 20px auto; /* Центрування картинки */
+}
+
+/* Оформлення шапки сайту */
+.site-header {
+    background: linear-gradient(135deg, #2c3e50, #4ca1af); /* Градієнтний фон */
+    color: white;
+    padding: 15px 40px; /* Більше простору з боків */
+    display: flex; /* Магія Flexbox: елементи стають в ряд */
+    justify-content: space-between; /* Розсовуємо лого і меню по краях */
+    align-items: center; /* Центруємо вертикально */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Тінь знизу */
+    position: sticky; /* Шапка "прилипає" до верху */
+    top: 0;
+    z-index: 1000; /* Щоб шапка була поверх інших елементів */
+}
+
+/* Стилі для Лого і Опису */
+.header-brand h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #f1c40f; /* Жовтий акцент */
+    text-shadow: 1px 1px 2px black;
+    text-align: left; /* Вирівнювання по лівому краю */
+}
+
+.header-brand p {
+    font-size: 14px;
+    margin: 0;
+    opacity: 0.9; /* Трохи прозорий текст */
+    font-weight: 300;
+}
+
+/* Секції контенту (Пошук, Про нас, Порівняння) */
+#search-section, #about, #comparison, #categories {
+    background-color: white;
+    margin: 20px auto; /* Відступи зверху/знизу і центрування */
+    padding: 20px;
+    max-width: 800px; /* Обмеження ширини */
+    border: 1px solid #ddd; /* Тонка рамка */
+    border-radius: 8px; /* Закруглення блоку */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Легка тінь */
+}
+
+/* Стиль для кнопки */
+.btn-style {
+    background-color: #27ae60; /* Зелений колір */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Ефект при наведенні мишки на кнопку */
+.btn-style:hover {
+    background-color: #219150; /* Трохи темніший зелений */
+}
+
+/* Стиль для полів вводу */
+.input-style {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 60%;
+}
+
+/* Сітка для карток (Grid Layout) */
+.animal-grid {
+    display: flex;
+    flex-wrap: wrap; /* Дозволяє переносити картки на новий рядок */
+    gap: 20px; /* Відступ між картками */
+    justify-content: center; /* Центрування */
+    padding: 20px;
+}
+
+/* Вигляд окремої картки */
+.animal-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 300px; /* Фіксована ширина */
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s; /* Анімація при наведенні */
+    text-align: center;
+}
+
+.animal-card:hover {
+    transform: scale(1.05); /* Легке збільшення при наведенні */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.animal-card img {
+    border-radius: 5px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Щоб картинка не розтягувалась криво */
+}
+
+/* Плавна прокрутка сторінки */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Стилі для меню */
+.header-nav ul {
+    list-style: none; /* Прибираємо крапки списку */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Пункти меню в рядок */
+    gap: 20px; /* Відступ між кнопками */
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 20px; /* Закруглені кнопки */
+    transition: all 0.3s ease; /* Плавна анімація */
+}
+
+/* Ефект при наведенні на меню */
+.header-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Напівпрозорий білий фон */
+    color: #f1c40f;
+    transform: translateY(-2px); /* Легке підняття вгору */
+}
+
+/* Активне посилання (поточна сторінка) */
+.header-nav a.active {
+    background-color: white;
+    color: #2c3e50; /* Темний текст на білому фоні */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Адаптивність для мобільних (щоб не ламалося на телефоні) */
+@media (max-width: 768px) {
+    .site-header {
+        flex-direction: column; /* На мобільному ставимо стовпчиком */
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .header-nav ul {
+        margin-top: 15px;
+    }
+    
+    .header-brand h1 {
+        text-align: center;
+    }
+}
