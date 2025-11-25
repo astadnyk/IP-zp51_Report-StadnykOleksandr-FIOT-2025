@@ -1,0 +1,30 @@
+<h2>Способи підключення стилів</h2>
+<h3>CSS можна підключати трьома способами:</h3>
+<ol>
+    <li><strong>Inline</strong> - стилі додаються безпосередньо до HTML елемента за допомогою атрибута: <code>style</code>
+        <br>
+        <em>Приклад:</em>
+        <pre>
+            &lt;p style="color: blue; font-size: 20px;"&gt;Текст&lt;/p&gt;
+        </pre>
+    </li>
+    <li><strong>Internal</strong> - стилі визначаються всередині HTML документа в секції: <code>&lt;style&gt;</code>
+        <br>
+        <em>Приклад:</em>
+        <pre>
+            &lt;style&gt;
+                p {
+                    color: green;
+                    font-size: 18px;
+                }
+            &lt;/style&gt;
+        </pre>
+    </li>
+    <li><strong>External</strong> - стилі зберігаються в окремому CSS файлі, який підключається до HTML документа за допомогою тега: <code>&lt;link&gt;</code>
+        <br>
+        <em>Приклад:</em>
+        <pre>
+            &lt;link rel="stylesheet" href="styles.css"&gt;
+        </pre>
+    </li>
+</ol>

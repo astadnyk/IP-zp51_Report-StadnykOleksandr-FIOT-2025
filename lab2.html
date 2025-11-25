@@ -9,35 +9,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<!-- Скрипт для динамічного завантаження контенту -->
-<script>
-    async function loadPage(page) {
-        try {
-            // Завантажуємо вміст сторінки
-            let response = await fetch("lab1/" + page);
-            // Перевіряємо чи запит успішний
-            if (!response.ok) {
-                throw new Error("HTTP error " + response.status);
-            }
-            // Отримуємо текст сторінки
-            let text = await response.text();
-            // Виводимо текст у відповідний контейнер
-            document.getElementById("output").innerHTML = text;
-            // Якщо завантажується головна сторінка проєкту, встановлюємо src для iframe
-            const iframe = document.querySelector('#output iframe');
-            if (iframe) {
-                // Встановлюємо шлях до головної сторінки проекту
-                iframe.src = 'lab1/project/index.html';
-            }
-        } catch (err) {
-            // Виводимо повідомлення про помилку
-            document.getElementById("output").innerHTML = "<p>Помилка завантаження сторінки!</p>";
-            // Логування помилки в консоль
-            console.error(err);
-        }
-    }
-</script>
-
 <!-- Тіло документа -->
 <body>
 
@@ -81,7 +52,7 @@
     <!-- Основний контейнер сторінки -->
     <div class="main-container">
         <div class="content-section">
-            
+
             <!-- Ліва панель із внутрішнім меню лабораторної -->
             <div class="left-side">
                 <aside>
@@ -89,32 +60,29 @@
                     <!-- Навігаційне меню лабораторної роботи -->
                     <nav class="left-nav">
                         <ul>
-                            <li><a href="javascript:void(0)" onclick="loadPage('tema.html')">Тема. Мета. Місце розташування сайту.</a></li>
-                            <li><a href="javascript:void(0)" onclick="loadPage('description.html')">
-                                Опис застосунку, предметного середовища. Опис бізнес логіки.
-                            </a></li>
-                            
-                            <!-- Підменю зі структурою документа -->
+                            <li><a href="javascript:void(0)" onclick="loadPage('tema2.html')">Тема. Мета. Місце розташування сайту.</a></li>
+                            <li><a href="javascript:void(0)" onclick="loadPage('styles.html')">Способи підключення стилів.</a></li>
+
+                            <!-- Підменю для селекторів -->
                             <li>
-                                <h3>Структура документа</h3>
+                                <h3>Селектори</h3>
                                 <ul class="sub-menu">
-                                    <li><a href="javascript:void(0)" onclick="loadPage('table.html')">Приклад HTML-коду таблиці</a></li>
-                                    <li><a href="javascript:void(0)" onclick="loadPage('image.html')">Приклад HTML-коду зображення</a></li>
-                                    <li><a href="javascript:void(0)" onclick="loadPage('search.html')">Приклад HTML-коду пошуку</a></li>
-                                    <li><a href="javascript:void(0)" onclick="loadPage('list.html')">Приклад HTML-коду списків</a></li>
+                                    <li><a href="javascript:void(0)" onclick="loadPage('tag.html')">Селектор тегу</a></li>
+                                    <li><a href="javascript:void(0)" onclick="loadPage('class.html')">Селектор класу</a></li>
+                                    <li><a href="javascript:void(0)" onclick="loadPage('ids.html')">Селектори ідентифікаторів</a></li>
+                                    <li><a href="javascript:void(0)" onclick="loadPage('other-selectors.html')">Інші селектори</a></li>
                                 </ul>
-                            </li> <!-- кінець підменю зі структурою документа -->
-                            
-                            <!-- Пункти меню для завантаження інших сторінок лабораторної роботи -->
-                            <li><a href="javascript:void(0)" onclick="loadPage('mainpage.html')">Головна сторінка</a></li>
-                            <li><a href="javascript:void(0)" onclick="loadPage('maincode.html')">Код головної сторінки</a></li>
+                            </li><!-- кінець підменю для селекторів -->
+
+                            <!-- Підменю для псевдокласів і псевдоелементів -->
+                            <li><a href="javascript:void(0)" onclick="loadPage('css.html')">CSS: Шрифти. Текст. Таблиці. Фон. Контур. Списки. CSS просунутий</a></li>
                             <li><a href="javascript:void(0)" onclick="loadPage('conclusions.html')">Висновки</a></li>
                             <li><a href="javascript:void(0)" onclick="loadPage('questions.html')">Контрольні питання</a></li>
-                        </ul> <!-- кінець пунктів меню для завантаження інших сторінок лабораторної роботи -->
+                        </ul>
                     </nav> <!-- кінець навігаційного меню лабораторної роботи -->
                 </aside>
-            </div> <!-- завершення лівої панелі -->
-            
+            </div> <!-- кінець лівої панелі -->
+
             <!-- Права панель для виведення контенту -->
             <div class="right-side">
                 <div class="info-card" id="output">
@@ -136,7 +104,7 @@
 </div> <!-- кінець обгортки сторінки -->
 
 <!-- Підключення скрипту для динамічного завантаження сторінок -->
-<script src="js/script_index.js" defer></script>
+<script src="js/script_lab2.js" defer></script>
 
 </body> <!-- кінець тіла документа -->
 

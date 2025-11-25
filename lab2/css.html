@@ -1,0 +1,108 @@
+<h2>CSS: Шрифти, Текст, Таблиці, Фон, Контур, Списки, CSS просунутий</h2>
+
+<h3>Стилізація тексту та шрифтів:</h3>
+<pre>
+body {
+    font-family: 'Times New Roman', serif;
+    font-size: 16px;
+    color: #333333;
+    line-height: 1.6;
+}
+h1, h2, h3 {
+    font-family: 'Arial', sans-serif;
+    color: #0055AA;
+}
+a {
+    text-decoration: none;
+    color: #FF6600;
+}
+a:hover {
+    text-decoration: underline;
+}
+p {
+    text-align: justify;
+    margin-bottom: 15px;
+}
+</pre>
+<p>Цей код встановлює основний шрифт для тіла сторінки, стилізує заголовки, посилання та абзаци для покращення читабельності та зовнішнього вигляду тексту.</p>
+
+<h3>Стилізація таблиць:</h3>
+<pre>
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #CCCCCC;
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #F2F2F2;
+}
+tr:nth-child(even) {
+    background-color: #FAFAFA;
+}
+</pre>
+<p>Цей код стилізує таблиці, встановлюючи ширину, межі, відступи та кольори для заголовків і рядків таблиці.</p>
+
+<h3>Стилізація фону та контурів:</h3>
+<pre>
+body {
+    background-color: #FFFFFF;
+    background-image: url('background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+div.container {
+    border: 2px solid #000000;
+    padding: 20px;
+    margin: 10px;
+}
+</pre>
+<p>Цей код встановлює фон для сторінки та стилізує контейнери з класом "container", додаючи їм контур, відступи та поля.</p>
+
+<h3>Стилізація списків:</h3>
+<pre>
+ul {
+    list-style-type: square;
+    margin-left: 20px;
+}
+ol {
+    list-style-type: decimal-leading-zero;
+    margin-left: 20px;
+}
+li {
+    margin-bottom: 5px;
+}
+</pre>
+<p>Цей код стилізує ненумеровані та нумеровані списки, змінюючи тип маркерів та додаючи відступи для покращення вигляду списків.</p>
+
+<h3>Просунуті техніки CSS:</h3>
+<pre>
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.button {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+.button:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+}
+</pre>
+<p>Цей код демонструє використання Flexbox для створення гнучких макетів та стилізацію кнопок з ефектами наведення для покращення взаємодії користувача.</p>
